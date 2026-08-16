@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaming Arrangements | Veteran Care Partners</title>
+    <meta name="description" content="Partner with Veteran Care Partners. We structure equitable, FAR-compliant teaming agreements to capture federal contracts and deliver unparalleled care.">
+    
+    <!-- Google Fonts: Inter for a clean, professional, corporate look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration matching the Logo & MGG Ecosystem -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        vcp: {
+                            navy: '#1A365D',     /* Deep Navy from logo */
+                            red: '#B22234',      /* Patriotic Red from logo */
+                            gold: '#C5A559',     /* Elegant Gold from logo */
+                            goldLight: '#E6D39A',
+                            silver: '#A0A5A8',   /* Shield Silver from logo */
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(197, 165, 89, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-pattern {
+            background-color: #1A365D;
+            background-image: linear-gradient(135deg, rgba(26, 54, 93, 0.98) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Business handshake/meeting background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #C5A559, #E6D39A, #C5A559);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A559 0%, #B08D3F 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            box-shadow: 0 4px 15px rgba(197, 165, 89, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        /* Form styling */
+        .form-section {
+            border-left: 3px solid #e2e8f0;
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .form-section::before {
+            content: '';
+            position: absolute;
+            left: -0.65rem;
+            top: 0;
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 50%;
+            background-color: #1A365D;
+            border: 3px solid #f8fafc;
+        }
+
+        .form-section-gold {
+            border-left-color: #C5A559;
+        }
+        .form-section-gold::before {
+            background-color: #C5A559;
+        }
+
+        /* Conditional Field Transitions */
+        #superiorField {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #superiorField.active {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-vcp-light text-slate-800 font-sans antialiased selection:bg-vcp-gold selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="VCPDark.png" alt="Veteran Care Partners Logo" class="h-16 w-auto transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/200x200/1A365D/C5A559?text=VCP';">
+                        <div class="hidden sm:flex flex-col justify-center">
+                            <span class="font-bold text-xl tracking-tight text-vcp-navy leading-tight uppercase">Veteran Care</span>
+                            <span class="font-semibold text-sm tracking-[0.2em] text-vcp-red leading-tight uppercase">Partners</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">About Us</a>
+                    <a href="capabilities.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">Capabilities</a>
+                    <a href="difference.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">The VCP Difference</a>
+                    
+                    <!-- Veteran Resources Dropdown -->
+                    <div class="relative group">
+                        <button class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors flex items-center gap-1 py-2">
+                            Veteran Resources <i class="fa-solid fa-chevron-down text-[10px] ml-1 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 origin-top">
+                            <a href="sme.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-vcp-navy font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-star text-vcp-red w-5 text-center mr-2"></i> Veteran SMEs</a>
+                            <a href="newsletter.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-vcp-navy font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-envelope-open-text text-vcp-navy w-5 text-center mr-2"></i> Digital Legion</a>
+                            <a href="job-board.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-vcp-navy font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-briefcase text-vcp-navy w-5 text-center mr-2"></i> Hiring Board</a>
+                            <a href="forum.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-vcp-navy font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-comments text-vcp-navy w-5 text-center mr-2"></i> Intel Forum</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#contact" class="btn-gold text-white px-6 py-2.5 rounded-md font-semibold text-sm shadow-md">Partner With Us</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-vcp-navy focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col gap-2">
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">About Us</a>
+                <a href="capabilities.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">Capabilities</a>
+                <a href="difference.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">The VCP Difference</a>
+                
+                <div class="pt-2 pb-1 border-t border-gray-100 mt-1">
+                    <span class="block px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Veteran Resources</span>
+                    <a href="sme.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-star text-vcp-red text-sm w-4 text-center"></i> Veteran SMEs</a>
+                    <a href="newsletter.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-envelope-open-text text-vcp-navy text-sm w-4 text-center"></i> Digital Legion</a>
+                    <a href="job-board.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-briefcase text-vcp-navy text-sm w-4 text-center"></i> Hiring Board</a>
+                    <a href="forum.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-comments text-vcp-navy text-sm w-4 text-center"></i> Intel Forum</a>
+                </div>
+
+                <a href="index.html#contact" class="block px-3 py-3 mt-2 rounded-md text-base font-medium bg-vcp-navy text-white text-center">Partner With Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden hero-pattern">
+            <div class="absolute inset-0 bg-gradient-to-t from-vcp-navy/95 to-vcp-navy/80 z-0"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
+                    <i class="fa-solid fa-handshake-angle text-white"></i>
+                    <span class="text-white text-xs font-semibold tracking-wider uppercase">Strategic B2G Partnerships</span>
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                    Teaming <span class="gold-gradient-text">Arrangements</span>
+                </h1>
+                
+                <p class="text-lg text-gray-300 font-light max-w-2xl leading-relaxed">
+                    Leverage our federal contracting infrastructure. Focus entirely on delivering unparalleled operational excellence and patient care. 
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Team With Us Section -->
+        <section class="py-16 bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="text-center md:text-left">
+                        <div class="w-14 h-14 bg-blue-50 text-vcp-navy rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0 border border-blue-100">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">FAR Compliant</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            We structure all Contractor Teaming Arrangements (CTAs) in strict adherence to FAR Subpart 9.6, ensuring fully compliant Prime/Sub or Joint Venture relationships.
+                        </p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <div class="w-14 h-14 bg-red-50 text-vcp-red rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0 border border-red-100">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Zero-Friction Compliance</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            We absorb the heavy administrative burden. From SAM.gov management to DCAA accounting standards and CUI data protection, we handle the federal red tape.
+                        </p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <div class="w-14 h-14 bg-vcp-gold/10 text-vcp-gold rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0 border border-vcp-gold/20">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Expanded Pipeline</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Partnering with VCP grants your agency access to highly specialized federal solicitations, specifically within the VA healthcare and DoD logistics sectors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-8 border-vcp-navy relative">
+                    <!-- Formspree Success/Error Messages -->
+                    <div data-fs-success style="display: none;" class="mb-8 p-6 bg-green-50 border border-green-200 text-green-800 rounded-xl text-lg font-medium text-center shadow-inner">
+                        <i class="fa-solid fa-check-circle text-green-600 text-2xl mb-2 block"></i>
+                        Partnership inquiry received. Our acquisitions team will review your capabilities and contact you shortly.
+                    </div>
+                    <div data-fs-error style="display: none;" class="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm font-medium text-center">
+                        There was an error submitting your application. Please check the fields and try again.
+                    </div>
+
+                    <div class="mb-10 border-b border-gray-100 pb-6">
+                        <h2 class="text-3xl font-extrabold text-slate-800 mb-2">Corporate Teaming Application</h2>
+                        <p class="text-slate-500">Initiate a formal review for a Contractor Teaming Arrangement (CTA) with Veteran Care Partners.</p>
+                    </div>
+
+                    <form id="teamingForm" class="space-y-6">
+                        
+                        <!-- Section 1: Company Profile -->
+                        <div class="form-section">
+                            <h3 class="text-sm font-bold text-vcp-navy uppercase tracking-wider mb-4">1. Corporate Entity Profile</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Legal Company Name *</label>
+                                    <input type="text" name="companyName" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="e.g., Apex Healthcare LLC">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">DBA (If Applicable)</label>
+                                    <input type="text" name="dba" data-fs-field class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="Doing Business As...">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Primary Industry Sector *</label>
+                                    <select name="industry" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm text-slate-700">
+                                        <option value="">Select Industry...</option>
+                                        <option value="Home Health Care">Home Health / Clinical Care</option>
+                                        <option value="Medical Staffing">Medical Staffing / Recruiting</option>
+                                        <option value="Logistics">Logistics & Supply Chain</option>
+                                        <option value="IT Services">Healthcare IT / Cybersecurity</option>
+                                        <option value="Consulting">Consulting / Administrative</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">UEI Number (If SAM.gov Registered)</label>
+                                    <input type="text" name="ueiNumber" data-fs-field class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm font-mono transition-colors" placeholder="12-Character UEI">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">Corporate Headquarters Location *</label>
+                                <input type="text" name="hqLocation" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="City, State, Zip Code">
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Contact Person -->
+                        <div class="form-section">
+                            <h3 class="text-sm font-bold text-vcp-navy uppercase tracking-wider mb-4">2. Primary Point of Contact</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Full Name *</label>
+                                    <input type="text" name="contactName" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="Jane Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Official Title *</label>
+                                    <input type="text" name="contactTitle" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="e.g., Director of Operations">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Corporate Email *</label>
+                                    <input type="email" name="contactEmail" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="jane@company.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Direct Phone Number *</label>
+                                    <input type="tel" name="contactPhone" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-sm transition-colors" placeholder="(555) 123-4567">
+                                </div>
+                            </div>
+
+                            <!-- Authority Logic -->
+                            <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                                <label class="block text-sm font-bold text-slate-800 mb-3">Are you an authorized decision-maker capable of executing legally binding Teaming Agreements for this corporate entity? *</label>
+                                <div class="flex gap-6">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="authorizedSigner" value="Yes" data-fs-field required class="w-4 h-4 text-vcp-navy focus:ring-vcp-navy auth-radio">
+                                        <span class="text-sm text-slate-700 font-medium">Yes, I am authorized.</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="authorizedSigner" value="No" data-fs-field required class="w-4 h-4 text-vcp-navy focus:ring-vcp-navy auth-radio">
+                                        <span class="text-sm text-slate-700 font-medium">No, I am submitting on behalf of leadership.</span>
+                                    </label>
+                                </div>
+
+                                <!-- Conditional Field -->
+                                <div id="superiorField">
+                                    <label class="block text-sm font-semibold text-slate-700 mb-1">Name and Title of Authorized Signer / Superior *</label>
+                                    <input type="text" id="superiorInput" name="superiorNameTitle" data-fs-field class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-white text-sm transition-colors" placeholder="e.g., John Smith, CEO">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Partnership Details -->
+                        <div class="form-section form-section-gold">
+                            <h3 class="text-sm font-bold text-vcp-gold uppercase tracking-wider mb-4">3. Strategic Alignment</h3>
+                            
+                            <div>
+                                <div class="flex justify-between items-end mb-1">
+                                    <label class="block text-sm font-semibold text-slate-700">Why would you like to partner with Veteran Care Partners? *</label>
+                                    <span id="charCount" class="text-xs text-slate-500 font-medium">280 chars left</span>
+                                </div>
+                                <textarea id="reasonInput" name="partnershipReason" data-fs-field required maxlength="280" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-gold focus:border-vcp-gold outline-none bg-slate-50 focus:bg-white text-sm resize-none transition-colors" placeholder="Briefly describe your agency's capabilities, your interest in the federal space, or how our organizations align culturally..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Legal & Consents -->
+                        <div class="pt-4 border-t border-gray-200">
+                            
+                            <div class="bg-slate-50 p-4 rounded-lg border border-gray-200 mb-4">
+                                <label class="flex items-start space-x-3 cursor-pointer group">
+                                    <div class="flex items-center h-5 mt-0.5">
+                                        <input type="checkbox" name="emailConsent" value="Yes" data-fs-field required class="w-5 h-5 text-vcp-navy border-gray-300 rounded focus:ring-vcp-navy focus:ring-2">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-sm font-bold text-slate-800 transition-colors">Communication Consent *</span>
+                                        <span class="text-xs text-slate-500 mt-1 leading-relaxed">I consent to receive communications from Meg and Greg Group LLC and its subsidiaries regarding potential teaming arrangements, compliance updates, and contract solicitations.</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="bg-red-50/50 p-5 rounded-lg border border-red-100 mb-6">
+                                <label class="block text-sm font-bold text-slate-800 mb-2"><i class="fa-solid fa-signature text-vcp-red mr-1"></i> Electronic Signature *</label>
+                                <p class="text-xs text-slate-600 mb-3 leading-relaxed">By typing your full name below, you certify that all information provided in this application is accurate and complete to the best of your knowledge. This serves as your legal electronic signature.</p>
+                                <input type="text" name="electronicSignature" data-fs-field required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-red focus:border-vcp-red outline-none bg-white font-mono text-sm transition-colors" placeholder="Type your full legal name to sign...">
+                            </div>
+
+                            <button type="submit" data-fs-submit-btn class="w-full btn-gold text-white font-bold py-4 px-6 rounded-xl shadow-lg flex justify-center items-center gap-3 text-lg transition-all hover:scale-[1.01]">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Partnership Inquiry
+                            </button>
+                            <p class="text-center text-xs text-slate-400 mt-4"><i class="fa-solid fa-lock mr-1"></i> Data is transmitted securely and handled in accordance with our <a href="disclosure.html" class="underline hover:text-vcp-navy">Disclosure Agreement</a>.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-vcp-dark text-gray-300 py-12 border-t-4 border-vcp-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+                
+                <!-- Brand Info -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 inline-flex">
+                        <img src="VCPDark.png" alt="VCP Logo" class="h-12 w-auto brightness-0 invert" onerror="this.src='https://placehold.co/100x100/ffffff/0f172a?text=VCP';">
+                        <div class="flex flex-col justify-center">
+                            <span class="font-bold text-lg tracking-tight text-white leading-tight uppercase">Veteran Care</span>
+                            <span class="font-semibold text-xs tracking-[0.2em] text-vcp-gold leading-tight uppercase">Partners</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 max-w-sm text-gray-400">
+                        Bridging the federal government and America's top home care talent to ensure our nation's heroes receive the care they deserve with honor and candor.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-vcp-silver">
+                        <span>A member of</span>
+                        <a href="https://megandgreggroup.com/" target="_blank" class="text-vcp-gold hover:text-white transition-colors">Meg and Greg Group LLC</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="hover:text-vcp-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="capabilities.html" class="hover:text-vcp-gold transition-colors text-sm">Capabilities</a></li>
+                        <li><a href="sme.html" class="hover:text-vcp-gold transition-colors text-sm">Veteran SME Network</a></li>
+                        <li><a href="difference.html" class="hover:text-vcp-gold transition-colors text-sm">The VCP Difference</a></li>
+                        <li><a href="https://megandgreggroup.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm">Meg & Greg Group</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Corporate -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Corporate & Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
+                        <li><a href="compliance.html" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
+                        <li><a href="teaming.html" class="text-vcp-gold transition-colors text-sm">Teaming Arrangements</a></li>
+                        <li><a href="legal.html" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
+                        <li><a href="disclosure.html" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sibling Brands -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Sister Brands</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://lodgingsources.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-link text-xs opacity-50"></i> Lodging Sources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">
+                    &copy; <span id="year"></span> Meg and Greg Group LLC. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-xs text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="legal.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Formspree Ajax Library Setup -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#teamingForm', formId: 'xrpzalld' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            if(mobileMenu.classList.contains('open')) {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Conditional Logic for "Authorized Signer"
+        const authRadios = document.querySelectorAll('.auth-radio');
+        const superiorField = document.getElementById('superiorField');
+        const superiorInput = document.getElementById('superiorInput');
+
+        authRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if(e.target.value === 'No') {
+                    superiorField.classList.add('active');
+                    superiorInput.setAttribute('required', 'required');
+                } else {
+                    superiorField.classList.remove('active');
+                    superiorInput.removeAttribute('required');
+                    superiorInput.value = ''; // Clear value when hidden
+                }
+            });
+        });
+
+        // Character Counter for Textarea
+        const reasonInput = document.getElementById('reasonInput');
+        const charCount = document.getElementById('charCount');
+        
+        if(reasonInput && charCount) {
+            reasonInput.addEventListener('input', function() {
+                const remaining = 280 - this.value.length;
+                charCount.textContent = `${remaining} chars left`;
+                
+                // Visual warning when running low
+                if (remaining <= 20) {
+                    charCount.classList.remove('text-slate-500');
+                    charCount.classList.add('text-vcp-red');
+                } else {
+                    charCount.classList.remove('text-vcp-red');
+                    charCount.classList.add('text-slate-500');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

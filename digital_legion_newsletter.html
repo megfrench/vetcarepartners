@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Legion Newsletter | Veteran Care Partners</title>
+    <meta name="description" content="Subscribe to the Digital Legion Newsletter for exclusive federal contracting intel, deep-state job sourcing, GovCon strategies, and FAR regulation breakdowns.">
+    
+    <!-- Google Fonts: Inter for a clean, professional, corporate look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration matching the Logo & MGG Ecosystem -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        vcp: {
+                            navy: '#1A365D',     /* Deep Navy from logo */
+                            red: '#B22234',      /* Patriotic Red from logo */
+                            gold: '#C5A559',     /* Elegant Gold from logo */
+                            goldLight: '#E6D39A',
+                            silver: '#A0A5A8',   /* Shield Silver from logo */
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(197, 165, 89, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for aesthetics not easily handled by inline utilities */
+        .hero-pattern {
+            background-color: #1A365D;
+            background-image: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to right, #C5A559, #E6D39A, #C5A559);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A559 0%, #B08D3F 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            box-shadow: 0 4px 15px rgba(197, 165, 89, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 600px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-vcp-light text-slate-800 font-sans antialiased selection:bg-vcp-gold selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="VCPDark.png" alt="Veteran Care Partners Logo" class="h-16 w-auto transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/200x200/1A365D/C5A559?text=VCP';">
+                        <div class="hidden sm:flex flex-col justify-center">
+                            <span class="font-bold text-xl tracking-tight text-vcp-navy leading-tight uppercase">Veteran Care</span>
+                            <span class="font-semibold text-sm tracking-[0.2em] text-vcp-red leading-tight uppercase">Partners</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">About Us</a>
+                    <a href="capabilities.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">Capabilities</a>
+                    <a href="difference.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">The VCP Difference</a>
+                    
+                    <!-- Veteran Resources Dropdown (Active State) -->
+                    <div class="relative group">
+                        <button class="text-sm font-semibold text-vcp-navy border-b-2 border-vcp-navy pb-1 flex items-center gap-1 py-2">
+                            Veteran Resources <i class="fa-solid fa-chevron-down text-[10px] ml-1 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 origin-top">
+                            <a href="sme.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-star text-vcp-red w-5 text-center mr-2"></i> Veteran SMEs</a>
+                            <a href="newsletter.html" class="block px-4 py-3 text-sm text-vcp-navy bg-blue-50 font-medium border-l-2 border-vcp-navy transition-all"><i class="fa-solid fa-envelope-open-text text-vcp-navy w-5 text-center mr-2"></i> Digital Legion</a>
+                            <a href="job-board.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-briefcase text-vcp-navy w-5 text-center mr-2"></i> Hiring Board</a>
+                            <a href="forum.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 font-medium border-l-2 border-transparent hover:border-vcp-red transition-all"><i class="fa-solid fa-comments text-vcp-navy w-5 text-center mr-2"></i> Intel Forum</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#contact" class="btn-gold text-white px-6 py-2.5 rounded-md font-semibold text-sm shadow-md">Partner With Us</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-vcp-navy focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col gap-2">
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">About Us</a>
+                <a href="capabilities.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">Capabilities</a>
+                <a href="difference.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">The VCP Difference</a>
+                
+                <!-- Mobile Veteran Resources Group -->
+                <div class="pt-2 pb-1 border-t border-gray-100 mt-1">
+                    <span class="block px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Veteran Resources</span>
+                    <a href="sme.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-star text-vcp-red text-sm w-4 text-center"></i> Veteran SMEs</a>
+                    <a href="newsletter.html" class="block px-3 py-3 rounded-md text-base font-medium text-vcp-navy bg-blue-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-envelope-open-text text-vcp-navy text-sm w-4 text-center"></i> Digital Legion</a>
+                    <a href="job-board.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-briefcase text-vcp-navy text-sm w-4 text-center"></i> Hiring Board</a>
+                    <a href="forum.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-comments text-vcp-navy text-sm w-4 text-center"></i> Intel Forum</a>
+                </div>
+
+                <a href="index.html#contact" class="block px-3 py-3 mt-2 rounded-md text-base font-medium bg-vcp-navy text-white text-center">Partner With Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
+            <div class="absolute inset-0 bg-gradient-to-t from-vcp-navy/95 to-transparent z-0"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vcp-gold/20 border border-vcp-gold/30 backdrop-blur-sm mb-6">
+                    <i class="fa-solid fa-envelope-open-text text-vcp-gold"></i>
+                    <span class="text-white text-xs font-semibold tracking-wider uppercase">Free Monthly Dispatch</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6 max-w-5xl tracking-tight">
+                    The Digital <span class="gold-gradient-text">Legion</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-3xl leading-relaxed">
+                    A free, monthly intelligence dispatch for veterans and civilians navigating the federal space. From deep-state job sourcing to advanced procurement strategies.
+                </p>
+                
+                <a href="#subscribe" class="btn-gold text-white px-8 py-4 rounded-md font-bold text-center flex items-center justify-center gap-3 text-lg shadow-lg">
+                    <i class="fa-solid fa-paper-plane"></i> Subscribe to the Legion
+                </a>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <div class="w-8 h-1 bg-vcp-navy rounded"></div>
+                        <h2 class="text-vcp-navy font-bold uppercase tracking-widest text-sm">Inside The Dispatch</h2>
+                        <div class="w-8 h-1 bg-vcp-navy rounded"></div>
+                    </div>
+                    <h3 class="text-3xl font-extrabold text-slate-800 mb-6">Actionable Intel for the Federal Arena</h3>
+                    <p class="text-slate-600 text-lg">
+                        We don't do spam. Once a month, we drop a high-value digest curated specifically for contractors, operators, and professionals aiming to dominate the B2G sector.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 hover:shadow-soft transition-all group">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-vcp-navy text-2xl mb-6 group-hover:text-vcp-red transition-colors">
+                            <i class="fa-solid fa-satellite-dish"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">Deep Sourcing & Opportunities</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            We dig past the front page of USAjobs. We source niche openings, exclusive teaming opportunities, and hard-to-find postings on obscure .gov domains and deep within the Intel Community space.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 hover:shadow-soft transition-all group">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-vcp-navy text-2xl mb-6 group-hover:text-vcp-red transition-colors">
+                            <i class="fa-solid fa-chess-knight"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">GovCon Strategy & Tactics</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Insider tips and tricks for breaking into federal procurement. Learn how to navigate SAM.gov, structure winning proposals, network with contracting officers, and avoid rookie compliance traps.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 hover:shadow-soft transition-all group md:col-span-2 lg:col-span-1">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-vcp-navy text-2xl mb-6 group-hover:text-vcp-red transition-colors">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">FAR Regulation of the Month</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            The Federal Acquisition Regulation (FAR) is a beast. Every month, we break down one critical FAR clause into plain English, explaining exactly how it impacts your operations and bids.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-gray-100 hover:shadow-soft transition-all group md:col-span-2 lg:col-span-1">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-vcp-navy text-2xl mb-6 group-hover:text-vcp-red transition-colors">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">The Legion Quiz</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Test your knowledge. Every newsletter features a challenging quiz question based on the previous month's FAR regulation or a common contracting scenario. Keep your edge sharp.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="py-20 bg-vcp-navy relative overflow-hidden border-y-4 border-vcp-red">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg class="absolute left-0 top-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon fill="currentColor" points="0,100 100,0 100,100" class="text-vcp-gold"></polygon>
+                </svg>
+            </div>
+            
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-extrabold text-white mb-4">Sneak Peek: FAR Breakdown</h3>
+                    <p class="text-blue-100 text-lg">A sample of the plain-English compliance intel we deliver directly to your inbox.</p>
+                </div>
+                
+                <!-- Mock Newsletter Card -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 border-t-8 border-vcp-gold transform rotate-1 hover:rotate-0 transition-transform duration-300 mx-auto max-w-3xl">
+                    <div class="flex items-center justify-between border-b-2 border-gray-100 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-scale-balanced text-2xl text-vcp-navy"></i>
+                            <h4 class="font-bold text-slate-800 text-xl tracking-tight">FAR of the Month</h4>
+                        </div>
+                        <span class="text-sm font-semibold text-vcp-red bg-red-50 px-3 py-1 rounded-full">Volume IV</span>
+                    </div>
+                    
+                    <h5 class="text-2xl font-extrabold text-vcp-navy mb-3">FAR Part 16: Types of Contracts</h5>
+                    <p class="text-slate-500 font-medium mb-6">Specifically: <span class="text-slate-800">Indefinite-Delivery Contracts (IDIQ)</span></p>
+                    
+                    <div class="space-y-4 text-slate-600 leading-relaxed">
+                        <p><strong>The Jargon:</strong> "Indefinite-delivery contracts are used when the exact times and/or exact quantities of future deliveries are not known at the time of contract award..."</p>
+                        <p><strong>The Legion Translation:</strong> The government knows they need something, but they don't know exactly <em>how much</em> or <em>when</em>. An IDIQ (Indefinite Delivery, Indefinite Quantity) establishes the pricing and terms up front. Then, the government issues individual "Task Orders" (for services) or "Delivery Orders" (for products) against that master contract as needs arise.</p>
+                        <p><strong>Why you care:</strong> Winning a spot on an IDIQ doesn't guarantee you money (except a tiny minimum). It gives you a hunting license. You still have to compete against the other winners for the actual task orders. Don't pop the champagne just for getting on the vehicle; prepare to hustle for the orders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Form Section -->
+        <section id="subscribe" class="py-20 lg:py-32 bg-slate-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-200 text-center relative overflow-hidden">
+                    
+                    <!-- Decorative corner block -->
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-vcp-navy/5 rounded-bl-full -z-10"></div>
+                    
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-vcp-navy text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    
+                    <h3 class="text-3xl font-extrabold text-slate-800 mb-4">Enlist in the Legion</h3>
+                    <p class="text-slate-600 mb-8">
+                        Join hundreds of veterans, logistics experts, and GovCon professionals receiving our monthly intel drop. 100% Free. Unsubscribe anytime.
+                    </p>
+
+                    <!-- Formspree Integration -->
+                    <div data-fs-success style="display: none;" class="mb-8 p-6 bg-green-50 border border-green-200 text-green-800 rounded-xl text-lg font-medium text-center">
+                        <i class="fa-solid fa-check-circle text-green-600 text-2xl mb-2 block"></i>
+                        Welcome to the Legion. Your intel drop will arrive soon.
+                    </div>
+                    <div data-fs-error style="display: none;" class="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm font-medium text-center">
+                        There was an error processing your subscription. Please check your email and try again.
+                    </div>
+
+                    <!-- Using the mkjwvbka endpoint as a placeholder -->
+                    <form id="newsletterForm" class="space-y-5 max-w-lg mx-auto text-left">
+                        <input type="hidden" name="_subject" value="New Digital Legion Subscriber!">
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
+                            <input type="text" name="name" data-fs-field required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white transition-colors" placeholder="Jane Doe">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+                            <input type="email" name="email" data-fs-field required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white transition-colors" placeholder="jane@example.com">
+                            <span data-fs-error="email" class="text-xs text-red-600 font-medium mt-1 block"></span>
+                        </div>
+                        
+                        <div class="pt-2 pb-2">
+                            <label class="block text-sm font-semibold text-slate-700 mb-3">Service Status (Select all that apply) *</label>
+                            <div class="grid grid-cols-2 gap-4" data-fs-field id="statusCheckboxes">
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="status" value="Veteran" class="status-cb w-4 h-4 text-vcp-navy border-gray-300 focus:ring-vcp-navy rounded transition-colors disabled:cursor-not-allowed">
+                                    <span class="text-sm font-medium text-slate-700 group-[.opacity-50]:cursor-not-allowed">Veteran</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="status" id="activeDutyCb" value="Active Duty" class="status-cb w-4 h-4 text-vcp-navy border-gray-300 focus:ring-vcp-navy rounded transition-colors">
+                                    <span class="text-sm font-medium text-slate-700">Active Duty</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="status" value="Civilian" class="status-cb w-4 h-4 text-vcp-navy border-gray-300 focus:ring-vcp-navy rounded transition-colors disabled:cursor-not-allowed">
+                                    <span class="text-sm font-medium text-slate-700 group-[.opacity-50]:cursor-not-allowed">Civilian</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="status" value="Contractor" class="status-cb w-4 h-4 text-vcp-navy border-gray-300 focus:ring-vcp-navy rounded transition-colors disabled:cursor-not-allowed">
+                                    <span class="text-sm font-medium text-slate-700 group-[.opacity-50]:cursor-not-allowed">Contractor</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-lg border border-gray-200 mt-4 mb-2">
+                            <label class="flex items-start space-x-3 cursor-pointer group">
+                                <div class="flex items-center h-5 mt-0.5">
+                                    <input type="checkbox" name="emailConsent" value="Yes" data-fs-field required class="w-5 h-5 text-vcp-navy border-gray-300 rounded focus:ring-vcp-navy focus:ring-2">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-sm font-bold text-slate-800 transition-colors">Communication Consent *</span>
+                                    <span class="text-xs text-slate-500 mt-1 leading-relaxed">I consent to receive the monthly Digital Legion dispatch and other related opportunities via email. I understand I can unsubscribe at any time.</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <button type="submit" data-fs-submit-btn class="w-full bg-vcp-navy hover:bg-slate-800 disabled:opacity-50 text-white font-bold py-4 px-6 rounded-xl shadow-md flex justify-center items-center gap-2 text-lg transition-all">
+                            Subscribe Now
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-vcp-dark text-gray-300 py-12 border-t-4 border-vcp-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+                
+                <!-- Brand Info -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 inline-flex">
+                        <img src="VCPDark.png" alt="VCP Logo" class="h-12 w-auto brightness-0 invert" onerror="this.src='https://placehold.co/100x100/ffffff/0f172a?text=VCP';">
+                        <div class="flex flex-col justify-center">
+                            <span class="font-bold text-lg tracking-tight text-white leading-tight uppercase">Veteran Care</span>
+                            <span class="font-semibold text-xs tracking-[0.2em] text-vcp-gold leading-tight uppercase">Partners</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6 max-w-sm text-gray-400">
+                        Bridging the federal government and America's top home care talent to ensure our nation's heroes receive the care they deserve with honor and candor.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-vcp-silver">
+                        <span>A member of</span>
+                        <a href="https://megandgreggroup.com/" target="_blank" class="text-vcp-gold hover:text-white transition-colors">Meg and Greg Group LLC</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="hover:text-vcp-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="capabilities.html" class="hover:text-vcp-gold transition-colors text-sm">Capabilities</a></li>
+                        <li><a href="sme.html" class="hover:text-vcp-gold transition-colors text-sm">Veteran SME Network</a></li>
+                        <li><a href="difference.html" class="hover:text-vcp-gold transition-colors text-sm">The VCP Difference</a></li>
+                        <li><a href="https://megandgreggroup.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm">Meg & Greg Group</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Corporate -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Corporate & Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Careers</a></li>
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
+                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sibling Brands -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Sister Brands</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://lodgingsources.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm flex items-center gap-2"><i class="fa-solid fa-link text-xs opacity-50"></i> Lodging Sources</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">
+                    &copy; <span id="year"></span> Meg and Greg Group LLC. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-xs text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Formspree Ajax Library Setup -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#newsletterForm', formId: 'xzepagnv' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            if(mobileMenu.classList.contains('open')) {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Active Duty Checkbox Logic
+        const activeDutyCb = document.getElementById('activeDutyCb');
+        const otherStatusCbs = document.querySelectorAll('.status-cb:not(#activeDutyCb)');
+        
+        if (activeDutyCb) {
+            activeDutyCb.addEventListener('change', function() {
+                if (this.checked) {
+                    // Disable and uncheck other options
+                    otherStatusCbs.forEach(cb => {
+                        cb.checked = false;
+                        cb.disabled = true;
+                        cb.parentElement.classList.add('opacity-50');
+                    });
+                } else {
+                    // Re-enable other options
+                    otherStatusCbs.forEach(cb => {
+                        cb.disabled = false;
+                        cb.parentElement.classList.remove('opacity-50');
+                    });
+                }
+            });
+        }
+
+        // Native Validation for Checkbox Group
+        const newsletterForm = document.getElementById('newsletterForm');
+        const allStatusCbs = document.querySelectorAll('.status-cb');
+        
+        if (newsletterForm && allStatusCbs.length > 0) {
+            // Require the first checkbox if none are checked initially
+            allStatusCbs[0].setAttribute('required', 'required');
+            
+            // Listen for changes across the group to toggle the required attribute dynamically
+            allStatusCbs.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const anyChecked = Array.from(allStatusCbs).some(c => c.checked);
+                    if (anyChecked) {
+                        allStatusCbs[0].removeAttribute('required');
+                    } else {
+                        allStatusCbs[0].setAttribute('required', 'required');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
