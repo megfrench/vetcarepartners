@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Capabilities | Veteran Care Partners</title>
-    <meta name="description" content="Explore the specialized capabilities of Veteran Care Partners, from VA contract coordination and compliance to top-tier home healthcare teaming.">
+    <meta name="description" content="Explore the specialized capabilities and educational training modules of Veteran Care Partners.">
     
     <!-- Google Fonts: Inter for a clean, professional, corporate look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,6 +82,15 @@
             max-height: 400px;
             opacity: 1;
         }
+
+        /* Hide Scrollbar for Mobile Sliders */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-vcp-light text-slate-800 font-sans antialiased selection:bg-vcp-gold selection:text-white">
@@ -104,7 +113,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">About Us</a>
                     <a href="capabilities.html" class="text-sm font-semibold text-vcp-navy border-b-2 border-vcp-navy pb-1">Capabilities</a>
-                    <a href="the_vcp_difference.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">The VCP Difference</a>
+                    <a href="teaming_arrangements.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">Teaming Arrangements</a>
                     
                     <!-- Veteran Resources Dropdown -->
                     <div class="relative group">
@@ -136,7 +145,7 @@
             <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col gap-2">
                 <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">About Us</a>
                 <a href="capabilities.html" class="block px-3 py-3 rounded-md text-base font-medium text-vcp-navy bg-blue-50">Capabilities</a>
-                <a href="the_vcp_difference.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">The VCP Difference</a>
+                <a href="teaming_arrangements.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">Teaming Arrangements</a>
                 
                 <!-- Mobile Veteran Resources Group -->
                 <div class="pt-2 pb-1 border-t border-gray-100 mt-1">
@@ -158,17 +167,17 @@
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vcp-gold/20 border border-vcp-gold/30 backdrop-blur-sm mb-6">
-                    <i class="fa-solid fa-briefcase text-vcp-gold"></i>
-                    <span class="text-white text-xs font-semibold tracking-wider uppercase">Strategic B2G Solutions</span>
+                    <i class="fa-solid fa-book-open-reader text-vcp-gold"></i>
+                    <span class="text-white text-xs font-semibold tracking-wider uppercase">Specialized Education & Training</span>
                 </div>
                 
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 max-w-4xl">
-                    Operational Excellence Meets <br>
-                    <span class="gold-gradient-text">Uncompromising Care.</span>
+                    Equipping Care Teams. <br>
+                    <span class="gold-gradient-text">Elevating Outcomes.</span>
                 </h1>
                 
                 <p class="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-3xl leading-relaxed">
-                    Veteran Care Partners eliminates the friction between stringent federal contracting requirements and the deployment of elite home healthcare. Explore our core service capabilities.
+                    Veteran Care Partners provides comprehensive, turnkey educational modules designed to empower healthcare agencies and their personnel with the specialized knowledge needed to excel.
                 </p>
             </div>
         </section>
@@ -177,78 +186,112 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-20">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-vcp-navy mb-6">Our Core Competencies</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-vcp-navy mb-6">Our Educational Modules</h2>
                     <div class="w-24 h-1 bg-vcp-red mx-auto rounded mb-6"></div>
                     <p class="text-slate-600 text-lg leading-relaxed">
-                        Backed by the robust corporate infrastructure of Meg and Greg Group LLC, we bring comprehensive, turnkey solutions to the Department of Veterans Affairs and private healthcare agencies alike.
+                        We don't compete with your care network; we enhance it. VCP provides turnkey, comprehensive training materials designed to close the knowledge gap for your caregivers, ensuring compliant, empathetic, and effective care delivery.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Mobile Scroll / Desktop Grid Container -->
+                <div class="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 snap-x snap-mandatory md:snap-none pb-8 md:pb-0 hide-scrollbar -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
                     
-                    <!-- Feature 1 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <!-- Module 1 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
                         <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-red group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-file-signature"></i>
+                            <i class="fa-solid fa-medal"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Federal Contracting (B2G)</h3>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Military Culture Modules</h3>
                         <p class="text-slate-600 leading-relaxed">
-                            We seamlessly navigate complex government Requests for Proposals (RFPs), managing the logistical and administrative bridges between federal agencies like the VA and the private health sector. We serve as a highly capable Prime Contractor.
+                            Bridge the gap between civilian caregivers and veteran patients. Our comprehensive training covers military terminology, cultural norms, common physical/invisible wounds, and how to build trust with those who have served.
                         </p>
                     </div>
 
-                    <!-- Feature 2 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <!-- Module 2 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
                         <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-gold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Working in Home Healthcare as an Immigrant</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Empower your immigrant workforce with the knowledge they need to thrive. This module addresses workplace cultural nuances, communication strategies, and navigating the US home healthcare system as a professional caregiver.
+                        </p>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-navy group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Navigating Medicare & Medicaid</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Demystify complex government healthcare systems for your staff and the families they serve. We provide clear, actionable materials on eligibility, coverage limitations, billing basics, and patient advocacy.
+                        </p>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-silver group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">VA Pension Aid & Attendance</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            A critical resource for agencies serving senior veterans. This training details the eligibility requirements and application process for VA Aid & Attendance, helping families unlock funds to pay for essential home care.
+                        </p>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-red group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-tower-observation"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Engaging with VSOs</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Learn how to effectively partner with Veteran Service Officers (VSOs). We teach your staff how to locate local advocates, understand their roles, and facilitate warm handoffs for patients needing claims assistance.
+                        </p>
+                    </div>
+
+                    <!-- Module 6 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-gold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-medical"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Custom Module Development</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Need specific training for a unique contract or patient demographic? Our Subject Matter Experts (SMEs) can develop bespoke educational materials and compliance training tailored exactly to your agency's operational needs.
+                        </p>
+                    </div>
+
+                    <!-- Module 7 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-navy group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Everything Optum-ized: Securing an Optum CCN Deal</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Unlock access to the VA Community Care Network. We break down the exact steps, requirements, and compliance metrics needed to secure and maintain a lucrative contract with Optum.
+                        </p>
+                    </div>
+
+                    <!-- Module 8 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-silver group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-user-nurse"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Talent Sourcing & Vetting</h3>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">How to Source High Quality Nursing and Care Teams</h3>
                         <p class="text-slate-600 leading-relaxed">
-                            Not all care is created equal. We identify and partner with established, trusted home health agencies. We vet care providers specifically for their candor, honor, and capability to serve those who have served.
+                            Discover proven strategies for recruiting, vetting, and retaining elite caregivers. This module provides actionable insights into building a reliable, highly skilled home health workforce that stands out.
                         </p>
                     </div>
 
-                    <!-- Feature 3 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-navy group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-handshake-angle"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Strategic Teaming Agreements</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            We structure equitable, compliant teaming arrangements with top-tier healthcare agencies. This allows agencies to focus purely on patient care while we handle the federal compliance and contract management overhead.
-                        </p>
-                    </div>
-
-                    <!-- Feature 4 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-silver group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-clipboard-check"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Compliance Frameworks</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Leveraging MGG's infrastructure ensures strict adherence to federal standards. We handle SAM.gov registrations, FAR clause management, DCAA compliance, and rigorous legal structuring.
-                        </p>
-                    </div>
-
-                    <!-- Feature 5 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <!-- Module 9 -->
+                    <div class="flex-none w-[85vw] sm:w-[350px] md:w-auto snap-center bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
                         <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-red group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-users-gear"></i>
+                            <i class="fa-solid fa-landmark"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Veteran SME Deployment</h3>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Better Understanding B2G Partnerships in Healthcare</h3>
                         <p class="text-slate-600 leading-relaxed">
-                            Through our specialized network, we source and deploy Veteran Subject Matter Experts (SMEs) on a contingency basis for specific logistical, administrative, and clinical oversight roles on federal contracts.
-                        </p>
-                    </div>
-
-                    <!-- Feature 6 -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-white rounded-xl shadow-sm flex items-center justify-center text-3xl text-vcp-navy mb-6 border-b-4 border-vcp-gold group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-truck-medical"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Care Logistics Brokerage</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Beyond personnel, we provide turnkey logistical coordination. This includes the supply chain management of specialized medical equipment and operational readiness for complex, multi-state contracts.
+                            Demystify the Business-to-Government space. Learn how to navigate federal frameworks, identify strategic teaming opportunities, and position your agency for long-term success in government contracting.
                         </p>
                     </div>
 
@@ -319,13 +362,13 @@
         
         <section class="py-20 bg-slate-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-extrabold text-vcp-navy mb-6">Ready to leverage our capabilities?</h2>
+                <h2 class="text-3xl font-extrabold text-vcp-navy mb-6">Ready to empower your care team?</h2>
                 <p class="text-slate-600 text-lg mb-10">
-                    Whether you are a highly-rated home health agency looking to enter the federal space, or a veteran looking to deploy your expertise, we are ready to connect.
+                    Whether you need our standard curriculum or custom-developed compliance modules, we are ready to equip your agency for success.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="index.html#contact" class="btn-gold text-white px-8 py-4 rounded-md font-bold text-center shadow-lg">
-                        Partner With Us
+                        Request Training Materials
                     </a>
                     <a href="sme.html" class="px-8 py-4 rounded-md font-bold text-center border-2 border-vcp-navy text-vcp-navy hover:bg-vcp-navy hover:text-white transition-all">
                         Join the SME Pool
@@ -365,7 +408,7 @@
                         <li><a href="about.html" class="hover:text-vcp-gold transition-colors text-sm">About Us</a></li>
                         <li><a href="capabilities.html" class="hover:text-vcp-gold transition-colors text-sm">Capabilities</a></li>
                         <li><a href="sme.html" class="hover:text-vcp-gold transition-colors text-sm">Veteran SME Network</a></li>
-                        <li><a href="difference.html" class="hover:text-vcp-gold transition-colors text-sm">The VCP Difference</a></li>
+                        <li><a href="teaming_arrangements.html" class="hover:text-vcp-gold transition-colors text-sm">Teaming Arrangements</a></li>
                         <li><a href="https://megandgreggroup.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm">Meg & Greg Group</a></li>
                     </ul>
                 </div>
@@ -374,11 +417,11 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Corporate & Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Careers</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
+                        <li><a href="faq_page.html" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
+                        <li><a href="compliance.html" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
+                        <li><a href="hiring_board.html" class="hover:text-vcp-gold transition-colors text-sm">Careers</a></li>
+                        <li><a href="legal_statement.html" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
+                        <li><a href="disclosure_agreement.html" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
                     </ul>
                 </div>
 
@@ -396,8 +439,8 @@
                     &copy; <span id="year"></span> Meg and Greg Group LLC. All rights reserved.
                 </p>
                 <div class="flex space-x-6 text-xs text-gray-500">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms_of_service.html" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
