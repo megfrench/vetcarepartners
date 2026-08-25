@@ -335,7 +335,7 @@
                         There was an error submitting your application. Please check the fields and try again.
                     </div>
 
-                    <form id="smeForm" action="https://formspree.io/f/mljryldk" method="POST" class="space-y-6" enctype="multipart/form-data">
+                    <form id="smeForm" action="https://formspree.io/f/mljryldk" method="POST" class="space-y-6">
                         <!-- Personal Details -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
@@ -416,21 +416,18 @@
                             </div>
                         </div>
 
-                        <!-- Resume Upload -->
+                        <!-- Resume Link Workaround -->
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Upload Resume/CV (Optional but Highly Recommended)</label>
-                            <div class="mt-1 flex justify-center px-6 pt-6 pb-8 border-2 border-gray-300 border-dashed rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors">
-                                <div class="space-y-2 text-center">
-                                    <i class="fa-solid fa-file-arrow-up text-4xl text-vcp-navy/50 mb-2"></i>
-                                    <div class="flex text-sm text-gray-600 justify-center">
-                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-vcp-navy hover:text-vcp-red focus-within:outline-none px-3 py-2 shadow-sm border border-gray-200 transition-colors">
-                                            <span>Select a file to upload</span>
-                                            <input id="file-upload" name="resume" data-fs-field type="file" class="sr-only" accept=".pdf,.doc,.docx">
-                                        </label>
-                                    </div>
-                                    <p class="text-xs text-gray-500 mt-2">PDF or Word Document up to 5MB</p>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Link to Resume (Google Drive, Dropbox, etc.) *</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fa-solid fa-link text-slate-400"></i>
                                 </div>
+                                <input type="url" name="resumeLink" data-fs-field required class="w-full pl-10 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-vcp-navy focus:border-vcp-navy outline-none bg-slate-50 focus:bg-white text-base transition-colors" placeholder="https://...">
                             </div>
+                            <p class="text-xs text-slate-500 font-medium mt-2">
+                                <i class="fa-solid fa-circle-info text-vcp-navy mr-1"></i> Please ensure link permissions are set to "Anyone with the link can view".
+                            </p>
                         </div>
 
                         <!-- Newsletter Opt-in -->
@@ -662,20 +659,6 @@
                 } else {
                     charCount.classList.remove('text-vcp-red');
                     charCount.classList.add('text-slate-500');
-                }
-            });
-        }
-
-        // File Upload UI Update (Visual only)
-        const fileInput = document.getElementById('file-upload');
-        if(fileInput) {
-            fileInput.addEventListener('change', function(e) {
-                const fileName = e.target.files[0]?.name;
-                if(fileName) {
-                    const labelSpan = this.parentElement.querySelector('span');
-                    labelSpan.textContent = fileName.length > 25 ? fileName.substring(0, 25) + '...' : fileName;
-                    labelSpan.classList.add('text-green-600');
-                    labelSpan.classList.add('font-bold');
                 }
             });
         }
