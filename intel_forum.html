@@ -6,7 +6,7 @@
     <title>/intel/ - VCP Underground | Veteran Care Partners</title>
     <meta name="description" content="Anonymous federal contracting intel, back-channel gossip, and unvarnished truth. Use a VPN.">
     
-    <!-- Google Fonts: Inter for a clean, professional, corporate look -->
+    <!-- Google Fonts: Inter and Roboto Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,6 +87,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
+            cursor: pointer;
         }
         .quote-link:hover {
             color: #1A365D; /* vcp-navy */
@@ -132,6 +133,7 @@
             padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             margin-bottom: 1rem;
+            animation: fadeIn 0.4s ease-out;
         }
         
         .reply-block {
@@ -143,6 +145,17 @@
             margin-top: 0.75rem;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             width: 100%;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .file-thumb-container {
@@ -189,6 +202,21 @@
             box-shadow: 0 4px 15px rgba(197, 165, 89, 0.4);
             transform: translateY(-2px);
         }
+
+        /* Loader */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1A365D;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-vcp-gold selection:text-white font-sans bg-slate-50">
@@ -211,7 +239,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="about.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">About Us</a>
                     <a href="capabilities.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">Capabilities</a>
-                    <a href="the_vcp_difference.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">The VCP Difference</a>
+                    <a href="teaming_arrangements.html" class="text-sm font-semibold text-slate-600 hover:text-vcp-navy transition-colors">Teaming Arrangements</a>
                     
                     <!-- Veteran Resources Dropdown (Active State) -->
                     <div class="relative group">
@@ -243,14 +271,14 @@
             <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col gap-2">
                 <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">About Us</a>
                 <a href="capabilities.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">Capabilities</a>
-                <a href="difference.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">The VCP Difference</a>
+                <a href="teaming_arrangements.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50">Teaming Arrangements</a>
                 
                 <div class="pt-2 pb-1 border-t border-gray-100 mt-1">
                     <span class="block px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Veteran Resources</span>
                     <a href="sme.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-star text-vcp-red text-sm w-4 text-center"></i> Veteran SMEs</a>
-                    <a href="newsletter.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-envelope-open-text text-vcp-navy text-sm w-4 text-center"></i> Digital Legion</a>
-                    <a href="job-board.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-briefcase text-vcp-navy text-sm w-4 text-center"></i> Hiring Board</a>
-                    <a href="forum.html" class="block px-3 py-3 rounded-md text-base font-medium text-vcp-navy bg-red-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-comments text-vcp-navy text-sm w-4 text-center"></i> Intel Forum</a>
+                    <a href="digital_legion_newsletter.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-envelope-open-text text-vcp-navy text-sm w-4 text-center"></i> Digital Legion</a>
+                    <a href="hiring_board.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-vcp-navy hover:bg-slate-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-briefcase text-vcp-navy text-sm w-4 text-center"></i> Hiring Board</a>
+                    <a href="intel_forum.html" class="block px-3 py-3 rounded-md text-base font-medium text-vcp-navy bg-red-50 flex items-center gap-2 pl-6"><i class="fa-solid fa-comments text-vcp-navy text-sm w-4 text-center"></i> Intel Forum</a>
                 </div>
 
                 <a href="index.html#contact" class="block px-3 py-3 mt-2 rounded-md text-base font-medium bg-vcp-navy text-white text-center">Partner With Us</a>
@@ -275,6 +303,9 @@
                 <p class="text-base md:text-lg text-gray-300 font-light max-w-2xl leading-relaxed">
                     Anonymous federal contracting intel, back-channel gossip, and unvarnished truth. The final frontier of places we can speak freely.
                 </p>
+                <div id="auth-status" class="mt-4 text-xs font-mono text-emerald-400 bg-black/30 px-3 py-1 rounded border border-emerald-500/30 flex items-center gap-2">
+                    <span class="loader w-3 h-3 border-[2px]"></span> Establishing secure uplink...
+                </div>
             </div>
         </section>
 
@@ -299,40 +330,43 @@
                 </div>
                 
                 <div class="flex items-center gap-3 w-full md:w-auto justify-end">
-                    <button id="toggle-post-btn" class="w-full md:w-auto btn-gold text-white font-bold py-2 px-5 rounded-lg text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+                    <button id="toggle-post-btn" class="w-full md:w-auto btn-gold text-white font-bold py-2 px-5 rounded-lg text-sm shadow-md transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                         <i class="fa-solid fa-plus"></i> New Dispatch
                     </button>
                 </div>
             </div>
 
-            <!-- New Thread Form (Modernized) -->
+            <!-- New Thread Form -->
             <div id="post-form-container" class="flex justify-center">
                 <div class="bg-white border border-gray-200 rounded-xl shadow-lg w-full max-w-3xl overflow-hidden mb-8">
                     <div class="bg-slate-50 border-b border-gray-200 p-4 flex justify-between items-center">
                         <h3 class="text-vcp-navy font-bold text-sm flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-vcp-red"></i> Creating Secure Dispatch in <span id="form-board-indicator" class="font-mono text-vcp-navy bg-white px-2 py-0.5 rounded border border-gray-200">/gen/</span></h3>
                         <button id="close-post-btn" class="text-slate-400 hover:text-vcp-red transition-colors"><i class="fa-solid fa-xmark text-lg"></i></button>
                     </div>
-                    <form class="p-6 space-y-4">
+                    <form id="dispatch-form" class="p-6 space-y-4">
+                        <input type="hidden" id="reply-to-id" value="">
+                        <input type="hidden" id="reply-to-post-num" value="">
+                        
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Alias / Tripcode</label>
-                                <input type="text" class="board-input w-full" placeholder="Anonymous">
+                                <input type="text" id="post-name" class="board-input w-full" placeholder="Anonymous" maxlength="30">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Subject</label>
-                                <input type="text" class="board-input w-full" placeholder="Optional Thread Title">
+                                <input type="text" id="post-subject" class="board-input w-full" placeholder="Optional Thread Title" maxlength="50">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Message Body</label>
-                            <textarea rows="5" class="board-input w-full resize-y" placeholder="> Greentext formatting supported. Do not post classified material."></textarea>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Message Body *</label>
+                            <textarea id="post-body" rows="5" class="board-input w-full resize-y" placeholder="> Greentext formatting supported. Do not post classified material." required></textarea>
                         </div>
                         <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-2 border-t border-gray-100">
                             <div class="w-full sm:w-auto">
-                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Attachment</label>
-                                <input type="file" class="text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-vcp-navy file:text-white hover:file:bg-slate-800 transition-colors cursor-pointer w-full">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Attachment (Simulated)</label>
+                                <input type="file" id="post-file" class="text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-vcp-navy file:text-white hover:file:bg-slate-800 transition-colors cursor-pointer w-full" accept="image/*,.pdf,.doc,.docx">
                             </div>
-                            <button type="button" class="w-full sm:w-auto bg-vcp-navy hover:bg-slate-800 text-white font-bold py-2.5 px-8 rounded-lg shadow-md transition-colors text-sm flex items-center justify-center gap-2">
+                            <button type="submit" id="submit-post-btn" class="w-full sm:w-auto bg-vcp-navy hover:bg-slate-800 text-white font-bold py-2.5 px-8 rounded-lg shadow-md transition-colors text-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                                 <i class="fa-solid fa-paper-plane"></i> Post Dispatch
                             </button>
                         </div>
@@ -349,20 +383,20 @@
                         <span class="bg-vcp-red text-white px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm"><i class="fa-solid fa-thumbtack"></i> SYSTEM ANNOUNCEMENT</span>
                         <span class="font-bold text-vcp-gold">sysadmin</span> 
                         <span class="bg-white/10 px-2 py-0.5 rounded text-xs font-mono">ID: 0xADMIN</span> 
-                        <span class="text-blue-200 text-xs">08/01/26(Sat)14:22:00</span> 
+                        <span class="text-blue-200 text-xs" id="sticky-date"></span> 
                         <span class="text-gray-300 text-xs font-mono">No.100000</span>
                     </div>
                     
                     <h2 class="text-xl font-bold mb-3 tracking-tight">Rules of Engagement - Read Before Posting</h2>
                     
                     <div class="text-blue-50 text-sm space-y-2 leading-relaxed">
-                        <p>Welcome to the final frontier of places we can speak freely. This is not a real government site, it's an affiliate playground for the MGG network.</p>
+                        <p>Welcome to the final frontier of places we can speak freely. This is a secure, live-synced intelligence board.</p>
                         <ol class="list-decimal list-inside space-y-1 ml-2 mt-2 font-medium">
-                            <li>Use a VPN. OPSEC is on you.</li>
-                            <li><strong>STRICT OPSEC ENFORCED.</strong> Zero tolerance for classified spills (SECRET, TS/SCI, NOFORN). Controlled Unclassified Information (CUI) must be strictly redacted per DoD Instruction 5200.48 prior to upload. Any breach of protocol will result in immediate sanitization of the thread, and the user will be taken out to digital pasture and shot.</li>
-                            <li>Trust is earned. Use a tripcode (name#password) if you want to build a rep across threads.</li>
-                            <li>Keep relevant intel in the proper boards (/fed/, /med/, /ops/).</li>
-                            <li><strong>EPHEMERAL & UP-TO-DATE:</strong> All data is volatile. To guarantee our intel remains the most current and up to date, all dispatches automatically self-destruct from public clear view 30 days after posting. No archives.</li>
+                            <li><strong>SECURE CONNECTION ESTABLISHED.</strong> Your session is anonymously authenticated to the cloud database.</li>
+                            <li><strong>STRICT OPSEC ENFORCED.</strong> Zero tolerance for classified spills (SECRET, TS/SCI, NOFORN). Controlled Unclassified Information (CUI) must be strictly redacted.</li>
+                            <li>Trust is earned. Pick an alias if you want to build a rep across threads.</li>
+                            <li>Keep relevant intel in the proper boards (/gen/, /fed/, /med/, /ops/).</li>
+                            <li><strong>EPHEMERAL & UP-TO-DATE:</strong> All data is volatile. Dispatches automatically self-destruct 30 days after posting.</li>
                         </ol>
                         <p class="mt-4 text-vcp-gold font-bold italic">Stay frosty.</p>
                     </div>
@@ -371,258 +405,23 @@
 
             <!-- Board Content Containers -->
             <div id="boards-container" class="relative min-h-[400px]">
-                
-                <!-- /gen/ Board -->
-                <div id="board-gen" class="board-content block">
-                    <!-- Thread 1 -->
-                    <div class="op-block" id="t103102">
-                        <!-- OP -->
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="file-thumb-container shrink-0">
-                                <a href="#" class="block">
-                                    <div class="file-thumb">
-                                        <i class="fa-solid fa-triangle-exclamation text-4xl text-slate-300"></i>
-                                    </div>
-                                </a>
-                                <div class="text-[10px] text-slate-400 truncate mt-1 text-center font-mono">samgov_error.png (89KB)</div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">SAM.gov UEI Validation Loop Again</span> 
-                                    <span class="text-emerald-700 font-bold">Anonymous</span>
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: 55t4r3</span> 
-                                    <span class="text-slate-400 text-xs">08/15/26(Sat)14:02:11</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t103102" class="hover:text-vcp-navy transition-colors">103102</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">
-                                    <span class="greentext">> be me</span>
-                                    <span class="greentext">> try to update our entity registration</span>
-                                    <span class="greentext">> upload articles of incorporation</span>
-                                    <span class="greentext">> "documentation does not match"</span>
-                                    <span class="greentext">> open ticket with FSD</span>
-                                    <span class="greentext">> "we will respond in 15 business days"</span><br>
-                                    Is anyone else trapped in the UEI validation purgatory right now? They rejected my utility bill because it said "Ste" instead of "Suite".
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Replies -->
-                        <div class="mt-4 flex flex-col items-start gap-2 pl-0 sm:pl-[124px]">
-                            <!-- Reply 1 -->
-                            <div class="reply-block" id="p103103">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">Anonymous</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: a2b99x</span>
-                                    <span class="text-slate-400">08/15/26(Sat)14:15:33</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p103103" class="hover:text-vcp-navy transition-colors">103103</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#t103102" class="quote-link">>>103102</a><br>
-                                    Bro it took us 3 months. You have to call the helpdesk exactly at 8am EST when they open, otherwise you're in the queue for 4 hours. Don't even bother with the live chat.
-                                </div>
-                            </div>
-
-                            <!-- Reply 2 -->
-                            <div class="reply-block" id="p103105">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">compliance_guy</span>
-                                    <span class="bg-vcp-gold/10 text-vcp-gold border border-vcp-gold/20 px-1.5 py-0.5 rounded font-mono font-bold">!!R3g5Lu</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: 11a22b</span>
-                                    <span class="text-slate-400">08/15/26(Sat)14:32:01</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p103105" class="hover:text-vcp-navy transition-colors">103105</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#p103103" class="quote-link">>>103103</a><br>
-                                    Can confirm. Also make sure the name on the utility bill is EXACTLY the legal business name registered with the state. No DBAs.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Loaders will show here initially -->
+                <div id="board-loader" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 py-20">
+                    <div class="loader mb-4 border-slate-200 border-top-slate-500"></div>
+                    <p class="text-sm font-mono tracking-widest uppercase">Decrypting Dispatches...</p>
                 </div>
 
-                <!-- /fed/ Board -->
-                <div id="board-fed" class="board-content hidden">
-                    <!-- E05 Compliance Thread (Newest) -->
-                    <div class="op-block" id="t201044">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="file-thumb-container shrink-0">
-                                <a href="#" class="block">
-                                    <div class="file-thumb bg-blue-50 border-blue-100 text-blue-300 hover:border-blue-300">
-                                        <i class="fa-solid fa-file-powerpoint text-4xl"></i>
-                                    </div>
-                                </a>
-                                <div class="text-[10px] text-slate-400 truncate mt-1 text-center font-mono">E05_Briefing_Deck_FINAL.pptx (2.1MB)</div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">E05 Compliance Briefing - Columbus</span> 
-                                    <span class="text-emerald-700 font-bold">Anonymous</span>
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: x9m3Lp</span> 
-                                    <span class="text-slate-400 text-xs">08/15/26(Sat)16:45:00</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t201044" class="hover:text-vcp-navy transition-colors">201044</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">
-                                    <span class="greentext">> go to the E05 compliance industry day in Columbus</span>
-                                    <span class="greentext">> expect actual implementation timelines</span>
-                                    <span class="greentext">> get 40 slides of buzzwords and no definitive FAR deviation notice</span><br>
-                                    Did anyone else attend this? The CO couldn't even answer if E05 applies to legacy tier-2 subs. If we have to audit our entire supply chain by Q1 '27 without allowable cost adjustments, we're going to bleed margin.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 flex flex-col items-start gap-2 pl-0 sm:pl-[124px]">
-                            <div class="reply-block" id="p201045">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">compliance_guy</span>
-                                    <span class="bg-vcp-gold/10 text-vcp-gold border border-vcp-gold/20 px-1.5 py-0.5 rounded font-mono font-bold">!!R3g5Lu</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: 11a22b</span>
-                                    <span class="text-slate-400">08/15/26(Sat)17:02:14</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p201045" class="hover:text-vcp-navy transition-colors">201045</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#t201044" class="quote-link">>>201044</a><br>
-                                    I was in the back row. E05 *will* apply to tier-2 subs, but word is DCAA won't start aggressive audits on it until Q3 '27. The slide deck was trash, but talk to your legal team about updating your standard reps and certs now. Don't wait for the final rule to hit the register.
-                                </div>
-                            </div>
-                            
-                            <div class="reply-block" id="p201048">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">Anonymous</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: aB29x1</span>
-                                    <span class="text-slate-400">08/15/26(Sat)17:35:50</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p201048" class="hover:text-vcp-navy transition-colors">201048</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#p201045" class="quote-link">>>201045</a><br>
-                                    Can confirm. Also, watch out for the data localization requirements buried in Section 4. They completely glossed over it, but it's a massive trap for anyone using offshore cloud storage for E05 deliverables.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="op-block" id="t201011">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="file-thumb-container shrink-0">
-                                <a href="#" class="block">
-                                    <div class="file-thumb bg-red-50 border-red-100 text-red-300 hover:border-red-300">
-                                        <i class="fa-solid fa-file-pdf text-4xl"></i>
-                                    </div>
-                                </a>
-                                <div class="text-[10px] text-slate-400 truncate mt-1 text-center font-mono">memo_redacted.pdf (402KB)</div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">Incoming FAR Part 15 Changes</span> 
-                                    <span class="text-emerald-700 font-bold">compliance_guy</span> 
-                                    <span class="bg-vcp-gold/10 text-vcp-gold border border-vcp-gold/20 px-1.5 py-0.5 rounded text-xs font-mono font-bold">!!R3g5Lu</span>
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: 11a22b</span> 
-                                    <span class="text-slate-400 text-xs">08/15/26(Sat)08:15:22</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t201011" class="hover:text-vcp-navy transition-colors">201011</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">Intel drop: Getting whispers from a CO friend at DLA. They are pushing a new memo next week regarding FAR Part 15. They are going to start cracking down hard on uncompensated overtime in proposals for exempt employees. Adjust your pricing models now before the Q4 rush.</div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-4 flex flex-col items-start gap-2 pl-0 sm:pl-[124px]">
-                            <div class="reply-block" id="p201014">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">Anonymous</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: f9d2q1</span>
-                                    <span class="text-slate-400">08/15/26(Sat)09:05:11</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p201014" class="hover:text-vcp-navy transition-colors">201014</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#t201011" class="quote-link">>>201011</a><br>
-                                    Good looking out. We just submitted an IDIQ proposal with an aggressive indirect rate modeling 45 hours for exempts. Might need to pull and revise if they let us.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- /med/ Board -->
-                <div id="board-med" class="board-content hidden">
-                    <div class="op-block" id="t305992">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">VetPro Credentialing Delays VISN 10</span> 
-                                    <span class="text-emerald-700 font-bold">RN_Operator</span> 
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: 8x8jJ2</span> 
-                                    <span class="text-slate-400 text-xs">08/14/26(Fri)11:30:00</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t305992" class="hover:text-vcp-navy transition-colors">305992</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">VetPro is taking forever this month. Anyone else seeing 6+ week delays for standard RN credentialing in VISN 10? We have staff sitting on the bench waiting to deploy on this home health contract.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- /ops/ Board -->
-                <div id="board-ops" class="board-content hidden">
-                    
-                    <!-- Expired Thread (Will be auto-deleted by JS on load) -->
-                    <div class="op-block" id="t400010">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">VISN 9 Supply Chain Disruptions</span> 
-                                    <span class="text-emerald-700 font-bold">Anonymous</span> 
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: x2m4B9</span> 
-                                    <span class="text-slate-400 text-xs">06/10/26(Wed)09:15:00</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t400010" class="hover:text-vcp-navy transition-colors">400010</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">This data is older than 30 days and should automatically self-destruct upon page load to protect OPSEC. If you are reading this, the ephemeral protocol has failed.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="op-block" id="t400122">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
-                                    <span class="text-slate-800 font-bold text-lg leading-none">Lodging Sources YRRP Event Reps</span> 
-                                    <span class="text-emerald-700 font-bold">Anonymous</span> 
-                                    <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: m4n3b1</span> 
-                                    <span class="text-slate-400 text-xs">08/13/26(Thu)16:45:11</span> 
-                                    <span class="text-slate-400 text-xs font-mono">No.<a href="#t400122" class="hover:text-vcp-navy transition-colors">400122</a></span>
-                                    <a href="#" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></a>
-                                </div>
-                                <div class="post-body mt-3">Heard Lodging Sources is looking for Regional Reps for the Yellow Ribbon events. Good gig? Per diem rates? <br><br>
-                                <span class="greentext">> DoD per diem limits</span><br>
-                                Just wondering if anyone has run these events before and knows the operational tempo.</div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-4 flex flex-col items-start gap-2 pl-0 sm:pl-[124px]">
-                            <div class="reply-block" id="p400125">
-                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
-                                    <span class="text-emerald-700 font-bold">Event_Guy</span>
-                                    <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: p9l2k1</span>
-                                    <span class="text-slate-400">08/13/26(Thu)17:10:44</span>
-                                    <span class="text-slate-400 font-mono">No.<a href="#p400125" class="hover:text-vcp-navy transition-colors">400125</a></span>
-                                </div>
-                                <div class="post-body text-sm">
-                                    <a href="#t400122" class="quote-link">>>400122</a><br>
-                                    It's a solid gig if you are highly organized. Tempo is fast during the actual event weekends (usually Fri-Sun). You are essentially the onsite liaison between the hotel staff and the military point of contact. If you know how to talk to both hoteliers and XOs, you'll be fine.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Live Board Containers -->
+                <div id="board-gen" class="board-content hidden"></div>
+                <div id="board-fed" class="board-content hidden"></div>
+                <div id="board-med" class="board-content hidden"></div>
+                <div id="board-ops" class="board-content hidden"></div>
             </div>
 
         </div>
-
     </main>
 
-    <footer class="bg-vcp-dark text-gray-300 py-12 border-t-4 border-vcp-red">
+    <footer class="bg-vcp-dark text-gray-300 py-12 border-t-4 border-vcp-red mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
                 
@@ -651,7 +450,7 @@
                         <li><a href="about.html" class="hover:text-vcp-gold transition-colors text-sm">About Us</a></li>
                         <li><a href="capabilities.html" class="hover:text-vcp-gold transition-colors text-sm">Capabilities</a></li>
                         <li><a href="sme.html" class="hover:text-vcp-gold transition-colors text-sm">Veteran SME Network</a></li>
-                        <li><a href="difference.html" class="hover:text-vcp-gold transition-colors text-sm">The VCP Difference</a></li>
+                        <li><a href="teaming_arrangements.html" class="hover:text-vcp-gold transition-colors text-sm">Teaming Arrangements</a></li>
                         <li><a href="https://megandgreggroup.com/" target="_blank" class="hover:text-vcp-gold transition-colors text-sm">Meg & Greg Group</a></li>
                     </ul>
                 </div>
@@ -660,11 +459,11 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm border-b border-gray-700 pb-2 inline-block">Corporate & Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Careers</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
-                        <li><a href="#" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
+                        <li><a href="faq_page.html" class="hover:text-vcp-gold transition-colors text-sm">FAQ</a></li>
+                        <li><a href="compliance.html" class="hover:text-vcp-gold transition-colors text-sm">Compliance</a></li>
+                        <li><a href="hiring_board.html" class="hover:text-vcp-gold transition-colors text-sm">Careers</a></li>
+                        <li><a href="legal_statement.html" class="hover:text-vcp-gold transition-colors text-sm">Legal Statement</a></li>
+                        <li><a href="disclosure_agreement.html" class="hover:text-vcp-gold transition-colors text-sm">Disclosure Agreement</a></li>
                     </ul>
                 </div>
 
@@ -682,18 +481,354 @@
                     &copy; <span id="year"></span> Meg and Greg Group LLC. All rights reserved.
                 </p>
                 <div class="flex space-x-6 text-xs text-gray-500">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms_of_service.html" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Set current year in footer
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Environment variables
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'vcp-intel-forum';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            // Mock config for local testing if env vars missing
+            apiKey: "mock", authDomain: "mock", projectId: "mock"
+        };
+        
+        let app, auth, db, currentUser;
+        const postsArray = []; // Store all posts locally
+
+        // Format Date Helpers
+        const dateOpt = { weekday: 'short', year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        document.getElementById('sticky-date').textContent = new Date().toLocaleString('en-US', dateOpt).replace(',', '').replace(/ /g, '');
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Navbar Scroll Effect
+        // Initialize Firebase
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+        } catch (e) {
+            console.error("Firebase Init Error:", e);
+        }
+
+        // DOM Elements
+        const authStatus = document.getElementById('auth-status');
+        const boardLoader = document.getElementById('board-loader');
+        const submitBtn = document.getElementById('submit-post-btn');
+        const newPostBtn = document.getElementById('toggle-post-btn');
+        const dispatchForm = document.getElementById('dispatch-form');
+
+        async function authenticate() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined') {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                currentUser = auth.currentUser;
+                
+                authStatus.innerHTML = `<i class="fa-solid fa-link"></i> Secure uplink established. ID: ${currentUser.uid.substring(0, 6)}`;
+                newPostBtn.disabled = false;
+                submitBtn.disabled = false;
+
+                // Start listening to the database
+                listenToPosts();
+            } catch (error) {
+                console.error("Authentication failed:", error);
+                authStatus.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-vcp-red"></i> Uplink failed.`;
+                authStatus.classList.replace('text-emerald-400', 'text-vcp-red');
+                authStatus.classList.replace('border-emerald-500/30', 'border-vcp-red/30');
+            }
+        }
+
+        function listenToPosts() {
+            if (!currentUser) return;
+
+            // RULE 1: Strict Paths
+            const postsRef = collection(db, 'artifacts', appId, 'public', 'data', 'forum_posts');
+            
+            // RULE 2: No Complex Queries. Fetch all, sort in memory.
+            const q = query(postsRef);
+
+            // RULE 3: Error callback required
+            onSnapshot(q, (snapshot) => {
+                postsArray.length = 0; // clear array
+                snapshot.forEach((doc) => {
+                    postsArray.push({ id: doc.id, ...doc.data() });
+                });
+                renderAllBoards();
+                boardLoader.style.display = 'none';
+            }, (error) => {
+                console.error("Database sync error:", error);
+                boardLoader.innerHTML = `<div class="text-vcp-red font-bold">Error decrypting dispatches. Check connection.</div>`;
+            });
+        }
+
+        // Execute Auth
+        authenticate();
+
+        window.switchTab = function(boardId, event = null) {
+            if(event) event.preventDefault();
+
+            document.querySelectorAll('.board-content').forEach(board => {
+                board.classList.remove('block');
+                board.classList.add('hidden');
+            });
+
+            document.querySelectorAll('.board-tab-btn').forEach(tab => {
+                tab.className = 'board-tab-btn px-4 py-2 rounded-lg text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all flex items-center gap-2';
+            });
+
+            const targetBoard = document.getElementById(`board-${boardId}`);
+            if(targetBoard) {
+                targetBoard.classList.remove('hidden');
+                targetBoard.classList.add('block');
+            }
+
+            const activeTab = document.getElementById(`tab-${boardId}`);
+            if(activeTab) {
+                activeTab.className = 'board-tab-btn px-4 py-2 rounded-lg text-sm font-bold bg-vcp-navy text-white shadow-sm transition-all flex items-center gap-2';
+            }
+
+            document.getElementById('form-board-indicator').textContent = `/${boardId}/`;
+            history.pushState(null, null, `#${boardId}`);
+            
+            // Re-render incase we switched tabs before data loaded
+            renderAllBoards(); 
+        }
+
+        // Initial tab check
+        let hash = window.location.hash.replace('#', '');
+        const validBoards = ['gen', 'fed', 'med', 'ops'];
+        if (!validBoards.includes(hash)) hash = 'gen';
+        switchTab(hash);
+
+        // Form toggles
+        const formContainer = document.getElementById('post-form-container');
+        const replyIdInput = document.getElementById('reply-to-id');
+        const replyNumInput = document.getElementById('reply-to-post-num');
+        const subjectInput = document.getElementById('post-subject');
+        const bodyInput = document.getElementById('post-body');
+
+        window.openForm = function(parentDocId = null, parentPostNum = null) {
+            formContainer.classList.add('active');
+            
+            if (parentDocId) {
+                replyIdInput.value = parentDocId;
+                replyNumInput.value = parentPostNum;
+                bodyInput.value = `>>${parentPostNum}\n`;
+                subjectInput.value = '';
+                subjectInput.disabled = true;
+                document.getElementById('form-board-indicator').innerHTML = `Replying to <span class="text-vcp-red font-mono">${parentPostNum}</span>`;
+            } else {
+                replyIdInput.value = '';
+                replyNumInput.value = '';
+                bodyInput.value = '';
+                subjectInput.disabled = false;
+                let currentHash = window.location.hash.replace('#', '') || 'gen';
+                document.getElementById('form-board-indicator').textContent = `/${currentHash}/`;
+            }
+
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+            setTimeout(() => bodyInput.focus(), 300);
+        };
+
+        document.getElementById('toggle-post-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if(formContainer.classList.contains('active') && !replyIdInput.value) {
+                formContainer.classList.remove('active');
+            } else {
+                openForm();
+            }
+        });
+
+        document.getElementById('close-post-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            formContainer.classList.remove('active');
+        });
+
+        dispatchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!currentUser) return;
+
+            const name = document.getElementById('post-name').value.trim() || 'Anonymous';
+            const subject = document.getElementById('post-subject').value.trim();
+            const bodyRaw = bodyInput.value.trim();
+            const fileInput = document.getElementById('post-file');
+            
+            const isReply = replyIdInput.value !== '';
+            const currentBoard = window.location.hash.replace('#', '') || 'gen';
+            const postNumber = Math.floor(Math.random() * 900000) + 100000; // 6 digit fake ID
+            
+            let fileName = '';
+            if (fileInput.files.length > 0) {
+                fileName = fileInput.files[0].name;
+            }
+
+            // Construct Data Object
+            const newPostData = {
+                board: currentBoard,
+                author: name,
+                authorId: currentUser.uid.substring(0, 6), // just use a substring for anonymity
+                subject: isReply ? '' : subject,
+                body: bodyRaw,
+                timestamp: Date.now(), // Client side timestamp for easy sorting
+                postNumber: postNumber,
+                isReply: isReply,
+                parentId: isReply ? replyIdInput.value : null,
+                fileName: fileName
+            };
+
+            try {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Transmitting...';
+                
+                const postsRef = collection(db, 'artifacts', appId, 'public', 'data', 'forum_posts');
+                await addDoc(postsRef, newPostData);
+                
+                dispatchForm.reset();
+                formContainer.classList.remove('active');
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert("Failed to securely transmit dispatch.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Post Dispatch';
+            }
+        });
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+            }[tag]));
+        }
+
+        function formatPostBody(text) {
+            let escaped = escapeHTML(text);
+            // Greentext formatting (>text)
+            escaped = escaped.replace(/^(&gt;[^>].*)$/gm, '<span class="greentext">$1</span>');
+            // Quote formatting (>>123456)
+            escaped = escaped.replace(/&gt;&gt;(\d{6})/g, '<span class="quote-link" onclick="scrollToPost(\'$1\')">&gt;&gt;$1</span>');
+            return escaped;
+        }
+        
+        window.scrollToPost = function(postNum) {
+            const el = document.getElementById(`p${postNum}`) || document.getElementById(`t${postNum}`);
+            if(el) {
+                el.scrollIntoView({behavior: 'smooth', block: 'center'});
+                el.style.transition = "background-color 0.5s";
+                const oldBg = el.style.backgroundColor;
+                el.style.backgroundColor = "#FEF3C7"; // highlight yellow
+                setTimeout(() => el.style.backgroundColor = oldBg, 1500);
+            }
+        }
+
+        // Format timestamp to board style
+        function formatBoardDate(ms) {
+            return new Date(ms).toLocaleString('en-US', dateOpt).replace(',', '').replace(/ /g, '');
+        }
+
+        function renderAllBoards() {
+            const boards = { gen: [], fed: [], med: [], ops: [] };
+            const replies = {}; // parentDocId -> array of replies
+            const now = Date.now();
+            const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+            // 1. Categorize & Filter Ephemeral (Older than 30 days)
+            postsArray.forEach(p => {
+                if (now - p.timestamp > THIRTY_DAYS_MS) return; // Skip expired posts
+
+                if (p.isReply) {
+                    if (!replies[p.parentId]) replies[p.parentId] = [];
+                    replies[p.parentId].push(p);
+                } else {
+                    if (boards[p.board]) boards[p.board].push(p);
+                }
+            });
+
+            // 2. Sort Data (Memory sorting per Rule 2)
+            for (let b in boards) {
+                boards[b].sort((a, b) => b.timestamp - a.timestamp); // Newest threads first
+            }
+            for (let pid in replies) {
+                replies[pid].sort((a, b) => a.timestamp - b.timestamp); // Oldest replies first
+            }
+
+            // 3. Render HTML
+            validBoards.forEach(boardId => {
+                const container = document.getElementById(`board-${boardId}`);
+                if(!container) return;
+                
+                let boardHTML = '';
+
+                if (boards[boardId].length === 0) {
+                    boardHTML = `<div class="text-center py-12 text-slate-400 font-mono text-sm border-2 border-dashed border-slate-200 rounded-xl bg-white/50">No secure dispatches found in this sector.</div>`;
+                } else {
+                    boards[boardId].forEach(thread => {
+                        
+                        let fileHTML = `<div class="file-thumb-container shrink-0 hidden sm:flex border border-dashed border-slate-200 rounded-lg h-[100px] items-center justify-center text-slate-300"><i class="fa-solid fa-comment-slash"></i></div>`;
+                        if (thread.fileName) {
+                             fileHTML = `
+                                <div class="file-thumb-container shrink-0">
+                                    <div class="file-thumb bg-slate-100"><i class="fa-solid fa-file-shield text-3xl text-vcp-navy"></i></div>
+                                    <div class="text-[10px] text-slate-400 truncate mt-1 text-center font-mono">${escapeHTML(thread.fileName)}</div>
+                                </div>`;
+                        }
+
+                        let repliesHTML = '';
+                        if (replies[thread.id]) {
+                            replies[thread.id].forEach(reply => {
+                                repliesHTML += `
+                                    <div class="reply-block" id="p${reply.postNumber}">
+                                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-xs">
+                                            <span class="text-emerald-700 font-bold">${escapeHTML(reply.author)}</span>
+                                            <span class="bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-mono">ID: ${reply.authorId}</span>
+                                            <span class="text-slate-400">${formatBoardDate(reply.timestamp)}</span>
+                                            <span class="text-slate-400 font-mono">No.<a href="#p${reply.postNumber}" class="hover:text-vcp-navy transition-colors font-bold">${reply.postNumber}</a></span>
+                                            <button onclick="openForm('${thread.id}', '${reply.postNumber}')" class="text-vcp-navy hover:text-vcp-red transition-colors font-bold ml-auto"><i class="fa-solid fa-reply"></i></button>
+                                        </div>
+                                        <div class="post-body text-sm">${formatPostBody(reply.body)}</div>
+                                    </div>
+                                `;
+                            });
+                        }
+
+                        boardHTML += `
+                            <div class="op-block" id="t${thread.postNumber}">
+                                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                                    ${fileHTML}
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2 text-sm">
+                                            ${thread.subject ? `<span class="text-slate-800 font-bold text-lg leading-none mr-2">${escapeHTML(thread.subject)}</span>` : ''}
+                                            <span class="text-emerald-700 font-bold">${escapeHTML(thread.author)}</span>
+                                            <span class="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-xs font-mono">ID: ${thread.authorId}</span> 
+                                            <span class="text-slate-400 text-xs">${formatBoardDate(thread.timestamp)}</span> 
+                                            <span class="text-slate-400 text-xs font-mono">No.<a href="#t${thread.postNumber}" class="hover:text-vcp-navy transition-colors font-bold">${thread.postNumber}</a></span>
+                                            <button onclick="openForm('${thread.id}', '${thread.postNumber}')" class="text-vcp-navy hover:text-vcp-red transition-colors text-xs font-bold bg-blue-50 px-2 py-0.5 rounded ml-auto sm:ml-2">Reply <i class="fa-solid fa-reply text-[10px]"></i></button>
+                                        </div>
+                                        <div class="post-body mt-3">${formatPostBody(thread.body)}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 flex flex-col items-start gap-2 pl-0 sm:pl-[24px] md:pl-[124px]">
+                                    ${repliesHTML}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                
+                // Only update DOM if the active tab matches (or update them all since they are hidden)
+                container.innerHTML = boardHTML;
+            });
+        }
+        
+        // Other UI Scripts
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
@@ -705,7 +840,6 @@
             }
         });
 
-        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -718,145 +852,6 @@
                 menuIcon.classList.replace('fa-times', 'fa-bars');
             }
         });
-
-        // Toggle New Thread Form
-        const toggleBtn = document.getElementById('toggle-post-btn');
-        const closeBtn = document.getElementById('close-post-btn');
-        const formContainer = document.getElementById('post-form-container');
-
-        toggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            formContainer.classList.toggle('active');
-            if(formContainer.classList.contains('active')) {
-                // Scroll up slightly to show the form
-                window.scrollTo({ top: 300, behavior: 'smooth' });
-                setTimeout(() => document.querySelector('textarea').focus(), 300);
-            }
-        });
-
-        closeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            formContainer.classList.remove('active');
-        });
-
-        // --- Modern Board Tab Logic (SPA Routing) ---
-        function switchTab(boardId, event = null) {
-            if(event) event.preventDefault();
-
-            // 1. Hide all boards
-            const allBoards = document.querySelectorAll('.board-content');
-            allBoards.forEach(board => {
-                board.classList.remove('block');
-                board.classList.add('hidden');
-            });
-
-            // 2. Reset all tab styles
-            const allTabs = document.querySelectorAll('.board-tab-btn');
-            allTabs.forEach(tab => {
-                tab.className = 'board-tab-btn px-4 py-2 rounded-lg text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all flex items-center gap-2';
-            });
-
-            // 3. Show target board
-            const targetBoard = document.getElementById(`board-${boardId}`);
-            if(targetBoard) {
-                targetBoard.classList.remove('hidden');
-                targetBoard.classList.add('block');
-            }
-
-            // 4. Style active tab
-            const activeTab = document.getElementById(`tab-${boardId}`);
-            if(activeTab) {
-                activeTab.className = 'board-tab-btn px-4 py-2 rounded-lg text-sm font-bold bg-vcp-navy text-white shadow-sm transition-all flex items-center gap-2';
-            }
-
-            // 5. Update Post Form Indicator & URL Hash
-            document.getElementById('form-board-indicator').textContent = `/${boardId}/`;
-            history.pushState(null, null, `#${boardId}`);
-        }
-
-        // On page load, read URL hash and open correct tab (defaults to 'gen')
-        window.addEventListener('DOMContentLoaded', () => {
-            let hash = window.location.hash.replace('#', '');
-            const validBoards = ['gen', 'fed', 'med', 'ops'];
-            if (!validBoards.includes(hash)) {
-                hash = 'gen';
-            }
-            switchTab(hash);
-        });
-
-        // Simulate reply clicking (populate textarea)
-        const quoteLinks = document.querySelectorAll('a[href^="#t"], a[href^="#p"]');
-        const textarea = document.querySelector('textarea');
-        
-        quoteLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Ignore actual inline quote links, only bind the "Reply" buttons or post numbers
-                if (link.classList.contains('quote-link')) return; 
-                
-                e.preventDefault();
-                formContainer.classList.add('active');
-                
-                // Extract post number
-                let postNum = link.textContent.replace('No.', '').trim();
-                if(postNum === "Reply") { // Handle clicking the explicit reply button
-                     const parentID = link.closest('.op-block, .reply-block').id;
-                     postNum = parentID.replace('t', '').replace('p', '');
-                }
-                
-                textarea.value = `>>${postNum}\n` + textarea.value;
-                
-                window.scrollTo({ top: 300, behavior: 'smooth' });
-                setTimeout(() => textarea.focus(), 300);
-            });
-        });
-
-        // --- Ephemeral Data Protocol (30-Day Auto-Delete) ---
-        function enforceDataRetention() {
-            const posts = document.querySelectorAll('.op-block, .reply-block');
-            const now = new Date();
-            let deletedCount = 0;
-            
-            posts.forEach(post => {
-                // Find date text inside the post metadata (e.g., 08/15/26(Sat)14:02:11)
-                const dateSpans = post.querySelectorAll('span');
-                let dateStr = null;
-                
-                for (let span of dateSpans) {
-                    if (/\d{2}\/\d{2}\/\d{2}\([A-Za-z]{3}\)\d{2}:\d{2}:\d{2}/.test(span.textContent)) {
-                        dateStr = span.textContent;
-                        break;
-                    }
-                }
-                
-                if (dateStr) {
-                    const match = dateStr.match(/(\d{2})\/(\d{2})\/(\d{2})/);
-                    if (match) {
-                        const month = parseInt(match[1], 10) - 1; // JS months are 0-indexed
-                        const day = parseInt(match[2], 10);
-                        const year = parseInt("20" + match[3], 10);
-                        
-                        const postDate = new Date(year, month, day);
-                        const diffTime = now - postDate;
-                        const diffDays = diffTime / (1000 * 60 * 60 * 24);
-                        
-                        // If older than 30 days, purge it securely from DOM
-                        if (diffDays > 30) {
-                            post.style.display = 'none';
-                            post.innerHTML = ''; 
-                            deletedCount++;
-                        }
-                    }
-                }
-            });
-            
-            if(deletedCount > 0) {
-                console.log(`[SYS] Ephemeral protocol executed. Securely purged ${deletedCount} expired dispatch(es) older than 30 days.`);
-            }
-        }
-        
-        // Execute sweep on load
-        window.addEventListener('DOMContentLoaded', enforceDataRetention);
-
     </script>
 </body>
 </html>
